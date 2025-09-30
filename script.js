@@ -15,47 +15,6 @@ let score_title = document.querySelector('.score_title');
 let game_state = 'Start';
 img.style.display = 'none';
 message.classList.add('messageStyle');
-let mobileStartBtn = document.getElementById("mobileStart");
-
-function startGame() {
-    if (game_state != 'Play') {
-        document.querySelectorAll('.pipe_sprite').forEach((e) => e.remove());
-        img.style.display = 'block';
-        bird.style.top = '40vh';
-        game_state = 'Play';
-        message.innerHTML = '';
-        score_title.innerHTML = 'Score : ';
-        score_val.innerHTML = '0';
-        message.classList.remove('messageStyle');
-        mobileStartBtn.style.display = "none";
-        play();
-    }
-}
-
-document.addEventListener('keydown', (e) => {
-    if (e.key == 'Enter') {
-        startGame();
-    }
-});
-
-mobileStartBtn.addEventListener("click", startGame);
-document.addEventListener("touchstart", (e) => {
-    if (game_state === "Start") {
-        startGame();
-    }
-});
-
-document.addEventListener("touchstart", () => {
-    if (game_state === "Play") {
-        img.src = 'Bird-2.png';
-        bird_dy = -7.6;
-    }
-});
-document.addEventListener("touchend", () => {
-    if (game_state === "Play") {
-        img.src = 'Bird.png';
-    }
-});
 
 document.addEventListener('keydown', (e) => {
     
@@ -173,3 +132,4 @@ function changeBackground(imageName) {
     document.querySelector('.background').style.backgroundSize = "cover";
 
 }
+
