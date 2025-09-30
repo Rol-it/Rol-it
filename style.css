@@ -127,8 +127,27 @@
 .bg-controls button:hover {
     background: gold;
 }
+.mobile-start {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.85);
+    padding: 15px 25px;
+    font-size: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
 
-/* 📱 Responsive for phones */
+@media only screen and (max-width: 768px) {
+    .mobile-start {
+        display: block;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .bg-controls {
         flex-direction: row;
@@ -151,5 +170,6 @@
         padding: 5px 8px;
     }
 }
+
 
 
